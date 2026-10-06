@@ -1,28 +1,17 @@
-<div align="center">
-  <table width="100%">
-    <tr>
-      <td width="50%" bgcolor="#0f172a" align="center">
-        <br>
-        <h1><font color="#22c55e">QuickCart</font></h1>
-        <br>
-      </td>
-      <td width="50%" bgcolor="#22c55e" align="center">
-        <br>
-        <h2><font color="#0f172a">Backend</font></h2>
-        <br>
-      </td>
-    </tr>
-  </table>
-  <strong><span style="color:#38bdf8">Spring Boot backend for identity, OTP authentication, persistence, and service-ready commerce workflows.</span></strong>
-</div>
+# QuickCart Backend
+
+![Java 25](https://img.shields.io/badge/Java-25-2fbf00?style=flat-square&labelColor=555)
+![Spring Boot 4.1.1](https://img.shields.io/badge/Spring%20Boot-4.1.1-088cc7?style=flat-square&labelColor=555)
+![PostgreSQL Flyway](https://img.shields.io/badge/PostgreSQL-Flyway-336791?style=flat-square&labelColor=555)
+![Redis OTP Store](https://img.shields.io/badge/Redis-OTP%20Store-dc382d?style=flat-square&labelColor=555)
 
 ---
 
-## <span style="color:#f97316">Project Snapshot</span>
+![Project Snapshot](https://img.shields.io/badge/Section-Project%20Snapshot-f97316?style=flat-square&labelColor=555)
 
 QuickCart is a Java Spring Boot backend focused on the core services behind a shopping experience. The current codebase includes phone OTP authentication, user and identity persistence, Redis-backed OTP challenge storage, Flyway migrations, and production-friendly configuration through environment variables.
 
-## <span style="color:#a855f7">Tech Stack</span>
+![Tech Stack](https://img.shields.io/badge/Section-Tech%20Stack-a855f7?style=flat-square&labelColor=555)
 
 | Layer | Choice |
 | --- | --- |
@@ -35,7 +24,7 @@ QuickCart is a Java Spring Boot backend focused on the core services behind a sh
 | Build Tool | Maven Wrapper |
 | Deployment Artifact | Dockerfile for Vercel-style backend packaging |
 
-## <span style="color:#22c55e">Features</span>
+![Features](https://img.shields.io/badge/Section-Features-22c55e?style=flat-square&labelColor=555)
 
 - Phone OTP request and verification flow.
 - OTP hashing, attempt limits, expiry, and resend cooldown configuration.
@@ -45,7 +34,7 @@ QuickCart is a Java Spring Boot backend focused on the core services behind a sh
 - Actuator health endpoint exposure.
 - Environment-driven configuration for deployment.
 
-## <span style="color:#38bdf8">Repository Layout</span>
+![Repository Layout](https://img.shields.io/badge/Section-Repository%20Layout-38bdf8?style=flat-square&labelColor=555)
 
 ```text
 quick_cart/
@@ -59,7 +48,7 @@ quick_cart/
       application.yaml Spring configuration
 ```
 
-## <span style="color:#f97316">Local Setup</span>
+![Local Setup](https://img.shields.io/badge/Section-Local%20Setup-f97316?style=flat-square&labelColor=555)
 
 From the repository root:
 
@@ -85,7 +74,7 @@ export PORT=8080
 export OTP_DELIVERY_MODE=disabled
 ```
 
-## <span style="color:#a855f7">Useful Commands</span>
+![Useful Commands](https://img.shields.io/badge/Section-Useful%20Commands-a855f7?style=flat-square&labelColor=555)
 
 ```bash
 cd backend
@@ -94,6 +83,6 @@ cd backend
 ./mvnw spring-boot:run
 ```
 
-## <span style="color:#22c55e">Git Hygiene</span>
+![Git Hygiene](https://img.shields.io/badge/Section-Git%20Hygiene-22c55e?style=flat-square&labelColor=555)
 
 Build output, compiled classes, local secrets, logs, and editor files are ignored. Keep source, configuration templates, migrations, wrapper files, and deployment manifests in Git; keep `target/` and `.env` files out.
