@@ -36,6 +36,12 @@ public class User {
     @Column(name = "display_name", length = 120)
     private String displayName;
 
+    @Column(name = "password_hash", nullable = false, length = 255)
+    private String passwordHash;
+
+    @Column(name = "mfa_enabled", nullable = false)
+    private boolean mfaEnabled;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false, length = 20)
     private UserStatus status = UserStatus.ACTIVE;
@@ -68,19 +74,21 @@ public class User {
     }
 
 
-    public static User createPhoneUser(String phoneE164) {
+    public static User register(
+        String email,
+        String displayName,
+        String passwordHash
+    ) {
         User user = new User();
 
-        user.phoneE164 = phoneE164;
-        user.phoneVerified = true;
+        user.email = email.toLowerCase();
+        user.displayName = displayName;
+        user.passwordHash = passwordHash;
+        user.emailVerified = true;
         user.status = UserStatus.ACTIVE;
         user.roles.add(UserRole.CUSTOMER);
 
         return user;
-    }
-
-    public void markPhoneVerified() {
-        this.phoneVerified = true;
     }
 
     public Long getId() {
@@ -97,6 +105,14 @@ public class User {
 
     public String getDisplayName() {
         return displayName;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public boolean isMfaEnabled() {
+        return mfaEnabled;
     }
 
     public UserStatus getStatus() {

@@ -2,12 +2,6 @@ spring:
   application:
     name: quickcart-backend
 
-  data:
-    redis:
-      url: ${REDIS_URL}
-      connect-timeout: 5s
-      timeout: 3s
-
   datasource:
     url: ${DB_URL}
     username: ${DB_USERNAME}
@@ -37,7 +31,7 @@ spring:
 
 server:
   address: 0.0.0.0
-  port: ${PORT:8080}
+  port: ${PORT:8081}
 
 management:
   endpoints:
@@ -51,19 +45,10 @@ management:
 
 quickcart:
   auth:
-    otp:
-      expiry: 5m
-      max-attempts: 5
-      resend-cooldown: 60s
-      digits: 6
-      hmac-secret: ${OTP_HMAC_SECRET}
-      delivery-mode: ${OTP_DELIVERY_MODE:disabled}
-
-  inventory:
-    reservation:
-      expiry: 10m
+    jwt:
+      secret: ${JWT_SECRET}
+      expiry: ${JWT_EXPIRY:12h}
 
   pagination:
     default-size: 20
     max-size: 100
-

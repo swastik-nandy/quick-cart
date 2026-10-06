@@ -5,10 +5,19 @@
 .env.*
 !.env.example
 !.env.sample
+!frontend/.env.local.example
 
 # Java / Maven build output
 target/
 **/target/
+
+# Node / Next.js
+node_modules/
+**/node_modules/
+.next/
+**/.next/
+out/
+**/out/
 
 # Logs
 *.log

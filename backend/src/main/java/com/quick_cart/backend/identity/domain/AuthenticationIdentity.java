@@ -45,16 +45,16 @@ public class AuthenticationIdentity {
     }
 
 
-    public static AuthenticationIdentity phone(
+    public static AuthenticationIdentity emailPassword(
         User user,
-        String phoneE164
+        String email
     ) {
         AuthenticationIdentity identity =
             new AuthenticationIdentity();
 
         identity.user = user;
-        identity.provider = AuthenticationProvider.PHONE;
-        identity.providerSubject = phoneE164;
+        identity.provider = AuthenticationProvider.EMAIL_PASSWORD;
+        identity.providerSubject = email.toLowerCase();
         identity.lastAuthenticatedAt = Instant.now();
 
         return identity;
