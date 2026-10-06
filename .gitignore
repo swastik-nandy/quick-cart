@@ -1,0 +1,29 @@
+# QuickCart workspace ignores
+
+# Local secrets and environment overrides
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Java / Maven build output
+target/
+**/target/
+
+# Logs
+*.log
+logs/
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+
+# Runtime and temporary files
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo

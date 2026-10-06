@@ -1,0 +1,26 @@
+FROM maven:3.9-eclipse-temurin-25 AS build
+
+WORKDIR /workspace
+
+COPY pom.xml .
+RUN mvn -B dependency:go-offline
+
+COPY src ./src
+RUN mvn -B -DskipTests package
+
+
+FROM eclipse-temurin:25-jre-alpine
+
+WORKDIR /app
+
+RUN addgroup -S quickcart \
+    && adduser -S quickcart -G quickcart
+
+COPY --from=build \
+    --chown=quickcart:quickcart \
+    /workspace/target/backend-0.0.1-SNAPSHOT.jar \
+    /app/app.jar
+
+USER quickcart
+
+ENTRYPOINT ["java", "-XX:MaxRAMPercentage=75.0", "-jar", "/app/app.jar"]
