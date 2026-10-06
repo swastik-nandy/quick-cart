@@ -1,12 +1,20 @@
-# <span style="color:#22c55e">QuickCart</span>
-
-<p align="center">
-  <img alt="QuickCart banner" src="https://placehold.co/1200x320/0f172a/22c55e?text=QuickCart+Backend" />
-</p>
-
-<p align="center">
+<div align="center">
+  <table width="100%">
+    <tr>
+      <td width="50%" bgcolor="#0f172a" align="center">
+        <br>
+        <h1><font color="#22c55e">QuickCart</font></h1>
+        <br>
+      </td>
+      <td width="50%" bgcolor="#22c55e" align="center">
+        <br>
+        <h2><font color="#0f172a">Backend</font></h2>
+        <br>
+      </td>
+    </tr>
+  </table>
   <strong><span style="color:#38bdf8">Spring Boot backend for identity, OTP authentication, persistence, and service-ready commerce workflows.</span></strong>
-</p>
+</div>
 
 ---
 
